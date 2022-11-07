@@ -40,7 +40,7 @@ Mobile version
 ### Links
 
 - Solution URL: [Code on GitHub](https://github.com/AlexandruStefanGherhes/Tip-Calculator-app.git)
-- Live Site URL: [Vercel Live URL](https://advice-generator-app-six-pi.vercel.app/)
+- Live Site URL: [Vercel Live URL](https://tip-calculator-app-six-pearl.vercel.app/)
 
 ## My process
 
