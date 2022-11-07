@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-size: 15px;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-family: "League Spartan", sans-serif;
+}
+
+body {
+  background: hsl(185deg, 41%, 84%);
+  font-family: "Space Mono", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body img {
+  margin: 30px 0;
+  width: 100px;
+  margin-bottom: 6rem;
+}
+
+.main {
+  background: hsl(0deg, 0%, 100%);
+  border-radius: 20px;
+  padding: 20px;
+}
+.main .calculate__bill {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: hsl(183deg, 100%, 15%);
+}
+.main .calculate__bill label {
+  color: hsl(186deg, 14%, 43%);
+}
+.main .calculate__bill .icon-dollar {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 12px;
+}
+.main .calculate__bill input {
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px;
+  margin: 5px 0 25px 0;
+  padding-left: 250px;
+  color: hsl(183deg, 100%, 15%);
+  background: hsl(189deg, 41%, 97%);
+  font-size: 20px;
+}
+.main .calculate__bill input:focus {
+  outline: 2px solid hsl(172deg, 67%, 45%);
+}
+.main .calculate__choose {
+  display: flex;
+  flex-direction: column;
+}
+.main .calculate__choose p {
+  font-family: inherit;
+  color: hsl(183deg, 100%, 15%);
+  margin-bottom: 10px;
+}
+.main .calculate__choose_people label {
+  color: hsl(186deg, 14%, 43%);
+}
+.main .calculate__choose_choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.main .calculate__choose_choices input {
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px;
+  margin-top: 0;
+  background: hsl(183deg, 100%, 15%);
+  color: hsl(0deg, 0%, 100%);
+  font-size: 20px;
+  cursor: pointer;
+}
+.main .calculate__choose_choices input:hover {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}
+.main .calculate__choose_choices .tip.active {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}
+.main .calculate__choose_choices #custom {
+  background: hsl(189deg, 41%, 97%);
+  color: hsl(183deg, 100%, 15%);
+  padding-left: 70px;
+}
+.main .calculate__choose_choices #custom::placeholder {
+  color: hsl(183deg, 100%, 15%);
+  opacity: 0.8;
+}
+.main .calculate__choose_choices #custom:focus {
+  outline: 2px solid hsl(172deg, 67%, 45%);
+}
+.main .calculate__choose_people {
+  margin-top: 20px;
+  color: hsl(183deg, 100%, 15%);
+  position: relative;
+}
+.main .calculate__choose_people .icon-person {
+  position: absolute;
+  bottom: -75px;
+  left: 15px;
+  width: 12px;
+}
+.main .calculate__choose_people input {
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px;
+  font-size: 20px;
+  color: hsl(183deg, 100%, 15%);
+  padding-left: 300px;
+  background: hsl(189deg, 41%, 97%);
+}
+.main .calculate__choose_people input:focus {
+  outline: 2px solid hsl(172deg, 67%, 45%);
+}
+.main .result {
+  margin-top: 25px;
+  background: hsl(183deg, 100%, 15%);
+  border-radius: 15px;
+  padding: 20px;
+  color: hsl(0deg, 0%, 100%);
+}
+.main .result__tip_amount {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.main .result__tip_amount .amount__tip p {
+  font-family: inherit;
+}
+.main .result__tip_amount .amount__tip p:nth-child(2) {
+  color: hsl(184deg, 14%, 56%);
+}
+.main .result__tip_amount .amount__sum {
+  color: hsl(172deg, 67%, 45%);
+  font-size: 35px;
+}
+.main .result__sum_total {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.main .result__sum_total .total__person p {
+  font-family: inherit;
+}
+.main .result__sum_total .total__person p:nth-child(2) {
+  color: hsl(184deg, 14%, 56%);
+}
+.main .result__sum_total .total__sum {
+  color: hsl(172deg, 67%, 45%);
+  font-size: 30px;
+}
+.main .result button {
+  width: 100%;
+  margin-top: 35px;
+  background: hsl(172deg, 67%, 45%);
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: inherit;
+  color: hsl(183deg, 100%, 15%);
+  font-size: 17px;
+}
+.main .result button:disabled {
+  background: hsl(172deg, 67%, 45%);
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+@media screen and (min-width: 1200px) {
+  .main {
+    display: flex;
+    width: 75rem;
+    gap: 40px;
+    padding: 32px;
+  }
+  .main .calculate {
+    flex: 1;
+  }
+  .main .calculate__bill label {
+    font-size: 20px;
+  }
+  .main .calculate__bill input {
+    margin-top: 10px;
+    padding: 13px;
+    padding-left: 380px;
+    font-size: 25px;
+  }
+  .main .calculate__bill .icon-dollar {
+    top: 30px;
+  }
+  .main .calculate__choose {
+    margin-top: 30px;
+  }
+  .main .calculate__choose p {
+    font-size: 20px;
+  }
+  .main .calculate__choose_choices {
+    margin-top: 10px;
+    grid-template-columns: repeat(3, 0.4fr);
+  }
+  .main .calculate__choose_choices input {
+    cursor: pointer;
+    font-size: 25px;
+  }
+  .main .calculate__choose_choices input:hover {
+    background-color: hsl(172deg, 67%, 45%);
+    color: hsl(183deg, 100%, 15%);
+  }
+  .main .calculate__choose_choices #custom {
+    padding-left: 20px;
+    font-size: 25px;
+  }
+  .main .calculate__choose_people {
+    margin-top: 70px;
+  }
+  .main .calculate__choose_people label {
+    font-size: 20px;
+  }
+  .main .calculate__choose_people input {
+    padding: 13px 0;
+    padding-left: 440px;
+    font-size: 25px;
+  }
+  .main .calculate__choose_people .icon-person {
+    bottom: -65px;
+  }
+  .main .result {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    flex: 0.9;
+  }
+  .main .result__tip_amount .amount__tip p {
+    font-size: 20px;
+  }
+  .main .result__tip_amount .amount__sum {
+    font-size: 50px;
+    margin-top: -10px;
+  }
+  .main .result__sum_total {
+    margin-top: 60px;
+  }
+  .main .result__sum_total .total__person p {
+    font-size: 20px;
+  }
+  .main .result .total__sum {
+    font-size: 50px;
+    margin-top: -10px;
+  }
+  .main .result button {
+    margin-top: 170px;
+    cursor: pointer;
+    padding: 14px 0;
+    font-size: 25px;
+  }
+  .main .result button:active {
+    background: hsl(185deg, 41%, 84%);
+  }
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+@import "variables";
+@import "resets";
+
+body {
+  background: $lightGrayishCyan;
+  font-family: "Space Mono", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //   place-items: center;
+
+  img {
+    margin: 30px 0;
+    width: 100px;
+    margin-bottom: 6rem;
+  }
+}
+
+@mixin input {
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px;
+}
+
+.main {
+  background: $white;
+  border-radius: 20px;
+  padding: 20px;
+
+  .calculate {
+    &__bill {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      color: $darkCyan;
+      label {
+        color: $darkGrayishCyan;
+      }
+
+      .icon-dollar {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 12px;
+      }
+      input {
+        @include input;
+        margin: 5px 0 25px 0;
+        padding-left: 250px;
+        color: $darkCyan;
+        background: $veryLightCyan;
+        font-size: 20px;
+         &:focus{
+            outline:2px solid $strongCyan;
+          }
+      }
+    }
+
+    &__choose {
+      display: flex;
+      flex-direction: column;
+      p {
+        font-family: inherit;
+        color: $darkCyan;
+        margin-bottom: 10px;
+      }
+
+      &_people {
+        label {
+          color: $darkGrayishCyan;
+        }
+      }
+
+      &_choices {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+
+        input {
+          @include input;
+          margin-top: 0;
+          background: $darkCyan;
+          color: $white;
+          font-size: 20px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $strongCyan;
+            color: $darkCyan;
+          }
+        }
+
+        .tip.active {
+          background-color: $strongCyan;
+          color: $darkCyan;
+        }
+
+        #custom {
+          background: $veryLightCyan;
+          color: $darkCyan;
+          padding-left: 70px;
+
+          &::placeholder {
+            color: $darkCyan;
+            opacity: 0.8;
+          }
+
+          &:focus{
+            outline:2px solid $strongCyan;
+          }
+        }
+      }
+    }
+
+    &__choose_people {
+      margin-top: 20px;
+      color: $darkCyan;
+      position: relative;
+
+      .icon-person {
+        position: absolute;
+        bottom: -75px;
+        left: 15px;
+        width: 12px;
+      }
+
+      input {
+        @include input;
+        font-size: 20px;
+        color: $darkCyan;
+        padding-left: 300px;
+        background: $veryLightCyan;
+         &:focus{
+            outline:2px solid $strongCyan;
+          }
+      }
+    }
+  }
+
+  .result {
+    margin-top: 25px;
+    background: $darkCyan;
+    border-radius: 15px;
+    padding: 20px;
+    color: $white;
+
+    &__tip_amount {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      .amount__tip {
+        p {
+          font-family: inherit;
+        }
+        p:nth-child(2) {
+          //   margin-top: -22px;
+          color: $grayishCyan;
+        }
+      }
+
+      .amount__sum {
+        color: $strongCyan;
+        font-size: 35px;
+      }
+    }
+
+    &__sum_total {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .total__person {
+        p {
+          font-family: inherit;
+        }
+        p:nth-child(2) {
+          //   margin-top: -22px;
+          color: $grayishCyan;
+        }
+      }
+
+      .total__sum {
+        color: $strongCyan;
+        font-size: 30px;
+      }
+    }
+
+    button {
+      width: 100%;
+      margin-top: 35px;
+      background: $strongCyan;
+      border: 0;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: inherit;
+      color: $darkCyan;
+      font-size: 17px;
+
+      &:disabled{
+        background: $strongCyan;
+        opacity: .2;
+        cursor:not-allowed;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main {
+    display: flex;
+    width: 75rem;
+    gap: 40px;
+    padding: 32px;
+    .calculate {
+      flex: 1;
+      &__bill {
+        label {
+          font-size: 20px;
+        }
+        input {
+          margin-top: 10px;
+          padding: 13px;
+          padding-left: 380px;
+          font-size: 25px;
+        }
+        .icon-dollar {
+          top: 30px;
+        }
+      }
+      &__choose {
+        margin-top: 30px;
+        p {
+          font-size: 20px;
+        }
+        &_choices {
+          margin-top: 10px;
+          grid-template-columns: repeat(3, 0.4fr);
+
+          input {
+            cursor: pointer;
+            font-size: 25px;
+
+            &:hover {
+              background-color: $strongCyan;
+              color: $darkCyan;
+            }
+          }
+          #custom {
+            padding-left: 20px;
+            font-size: 25px;
+          }
+        }
+        &_people {
+          margin-top: 70px;
+          label {
+            font-size: 20px;
+          }
+          input {
+            padding: 13px 0;
+            padding-left: 440px;
+            font-size: 25px;
+          }
+
+          .icon-person {
+            bottom: -65px;
+          }
+        }
+      }
+    }
+
+    .result {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      flex: 0.9;
+      &__tip_amount {
+        .amount__tip {
+          p {
+            font-size: 20px;
+          }
+        }
+
+        .amount__sum {
+          font-size: 50px;
+          margin-top: -10px;
+        }
+      }
+
+      &__sum_total {
+        margin-top: 60px;
+
+        .total__person {
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .total__sum {
+        font-size: 50px;
+        margin-top: -10px;
+      }
+
+      button {
+        margin-top: 170px;
+        cursor: pointer;
+        padding: 14px 0;
+        font-size: 25px;
+
+        &:active {
+          background: $lightGrayishCyan;
+        }
+      }
+    }
+  }
+}
